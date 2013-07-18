@@ -1,0 +1,14 @@
+.DS_Store?
+/uploads/*
+/plugins/*
+/themes/twentyten/*
+/themes/twentyeleven/*
+/themes/twentytwelve/*
+/themes/AcAffairs/*
+index.php
+/themes/index.php
+advanced-cache.php
+/cache/*
+/upgrade/*
+w3-total-cache-config.php
+/w3tc-config/*
