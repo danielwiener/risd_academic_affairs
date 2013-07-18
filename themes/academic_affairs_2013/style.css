@@ -508,23 +508,26 @@ div.aligncenter {
 	padding: 10px;
 	margin-top: 10px;
 	background-color: #fff;
+	/*border: 1px solid red;*/
 }
 
 #column-2 {
 	background-color: #fff;
-	width: 270px;
+	width: 345px;
 	float: left;
 	padding: 10px;
 	margin: 15px;
 	margin-top: 10px;
+	/*border: 1px solid blue;*/
 }
 
 #column-3 {
 	background-color: #fff;
-	width: 270px;
+	width: 180px;
 	float: right;
 	padding: 10px;
 	margin-top: 10px;
+	/*border: 1px solid yellow;*/
 }
 
 #homepage-clear {
