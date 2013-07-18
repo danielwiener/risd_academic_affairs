@@ -62,6 +62,27 @@ get_header(); ?>
 
 
 			<div id="column-2">
+					<h1>Announcements</h1>
+					
+
+					 <ul><?php
+						$args = array(
+							'category_name' 	=> 'announcements',
+							'post_type'			=> 'post',
+							'post_status'		=> 'publish',
+							'posts_per_page'	=> 5,
+							'orderby'			=> 'date',
+							'order'				=> 'DESC'							
+						);
+					 	$announcments = new WP_Query($args);
+							while($announcments->have_posts()) : $announcments->the_post();?>
+									<li><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></li>
+					 <?php endwhile; ?></ul>
+					<hr />
+					Please email the <a href="mailto:jconnell@risd.edu">Web Administrator</a> to submit an Announcement
+			</div>
+
+			<div id="column-3">
 				<h1>RISD Public Websites</h1>
 				<ul>
 					<li><a href="http://library.risd.edu/">fleet library website</a></li>
@@ -71,18 +92,6 @@ get_header(); ?>
 					<li><a href="http://www.risdmuseum.org/">risd museum of art</a></li>
 					<li><a href="http://www.risdworks.com/">risd | works</a></li>
 				</ul>
-			</div>
-
-			<div id="column-3">
-				<h1>RISD Blogs</h1>
-				<ul>
-					<li><a href="http://risdlibrary.blogspot.com/">risd library reference</a></li>
-					<li><a href="http://risdspecial.wordpress.com/">risd library special collections</a></li>
-					<li><a href="http://risdvr.wordpress.com/">RIsD lIbRARY vIsUAl ResOURces</a></li>
-				</ul>
-				<h1 class="announcement">Announcements</h1>
-				<!-- <a href="<?php //bloginfo('url'); ?>/submit">Click here to submit an announcement</a> -->
-				Please email the <a href="mailto:jconnell@risd.edu">Web Administrator</a> to submit an Announcement
 			</div>
 			<div id="homepage-clear"></div>
 
