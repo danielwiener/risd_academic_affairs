@@ -521,6 +521,10 @@ div.aligncenter {
 	/*border: 1px solid blue;*/
 }
 
+li.announcements {
+	padding-bottom: 10px;
+}
+
 #column-3 {
 	background-color: #fff;
 	width: 180px;
