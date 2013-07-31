@@ -63,7 +63,6 @@ get_header(); ?>
 
 			<div id="column-2">
 					<h1>Announcements</h1>
-					
 
 					 <ul><?php
 						$args = array(
@@ -76,10 +75,11 @@ get_header(); ?>
 						);
 					 	$announcments = new WP_Query($args);
 							while($announcments->have_posts()) : $announcments->the_post();?>
-									<li><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></li>
+									<li class="announcements"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></li>
 					 <?php endwhile; ?></ul>
 					<hr />
-					Please email the <a href="mailto:jconnell@risd.edu">Web Administrator</a> to submit an Announcement
+					<!-- Please email the <a href="mailto:jconnell@risd.edu">Web Administrator</a> to submit an Announcement -->
+					<a href="<?php echo home_url(); ?>/submit-announcements">Click here to submit an announcement</a>
 			</div>
 
 			<div id="column-3">
