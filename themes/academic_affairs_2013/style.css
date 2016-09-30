@@ -148,6 +148,10 @@ ul {
 	padding: 0;
 }
 
+body article p em {
+	font-style: italic !important;
+}
+
 /* @group lists */
 
 #content li.page_item a{
@@ -424,7 +428,8 @@ div.aligncenter {
 }
 
 .alignleft {
-	
+	float: left;
+	padding-right: 5px;
 }
 
 .alignright {
@@ -1274,22 +1279,6 @@ div#image_labels {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #submit .grey{
 	color: #919191;
 }
@@ -1417,3 +1406,14 @@ span.sm_cal_entry_label {
 	border-bottom: 1px dotted black !important;
 }
 
+#content-homepage-bottom #column-1 .simcal-default-calendar-list ul.simcal-events {
+    margin: 0px 0px 0px 0px !important;
+}
+
+.home #content-homepage-bottom #column-1 div.simcal-default-calendar-list  {
+	padding: 0px 0px 0px 0px !important;	
+}
+
+.home #content-homepage-bottom #column-1 div.simcal-default-calendar-list .simcal-event-details {
+	font-size: 12px;	
+}
