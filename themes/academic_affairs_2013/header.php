@@ -38,6 +38,13 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
     <?php wp_head(); ?>
+<style type="text/css" media="screen">
+	.gce-list-event, .gce-tooltip-event {
+	    background-color: #fff !important;
+		font-weight: bold;
+		padding: 0;
+	}
+</style>
 
   </head>
   <body <?php body_class(); ?>>
@@ -48,81 +55,9 @@
     <div id="container">
       <header role="banner">
         <div id="navigation">
-          <ul> 
+          <ul>
             <?php 
-              //241 : Directory + Resources
-              //420 : Announcements + Updates
-              //422 : Calendar
-              //424 : Research @ RISD
-              //17396 : events
-              $header_pages = array(241,422,17396,420,424);
-              $count = count($header_pages); 
-              
-              for($i = 0; $i < $count; $i++) { 
-                $classt = "";
-              
-                //check if current page is child of this page if it is add active
-                if (is_Page()){
-                  if ( in_array($header_pages[$i], (array)get_post_ancestors($post->ID)) || $post->ID == $header_pages[$i])
-                    $classt .= "current_page_item ";
-                } 
-                else if (is_category()){
-                  //check if current page is a subcategory of this page if it is add active
-                  $nam = get_the_title($header_pages[$i]);
-                  $id = get_cat_id($nam); 
-                
-                  //get top level category
-                  $cat_ID = get_query_var('cat');
-                      
-                      
-                  //get top level page:
-                  $cats = get_category_parents($cat_ID, false,',');
-                  $cats = split ( ',' , $cats );
-                  $cat_ID = get_cat_id($cats[0]);
-                  
-                  
-                  if ($cat_ID == $id){
-                    $classt .= "current_page_item ";
-                  }  
-                } 
-                else if (is_single()){
-                  //check if current page is a subcategory of this page if it is add active
-                  $nam = get_the_title($header_pages[$i]);
-                  $id = get_cat_id($nam); 
-                  
-                  //get top level category
-                  $all_cats = get_the_category();
-                  $cat_ID = $all_cats[0]->cat_ID;
-                  
-                  //get top level page:
-                  $cats = get_category_parents($cat_ID, false,',');
-                  $cats = split ( ',' , $cats );
-                  $cat_ID = get_cat_id($cats[0]);
-                  
-                  
-                  if ($cat_ID == $id){
-                    $classt .= "current_page_item ";
-                  }
-                }
-              
-                //check if this is the last one
-                if($i == $count-1) {
-                  $classt .= "last ";
-                }
-              
-                echo '<li class="'.$classt.'">';
-                /* if (get_the_title($header_pages[$i]) == 'Calendar'){ //should this link to the calendar category?
-                  echo '<a href="'.get_bloginfo('url').'/category/calendar/">';
-                } else 
-                */
-                if (get_the_title($header_pages[$i]) == 'Announcements and Updates'){ // or the anouncemenent category?
-                  echo '<a href="'.get_bloginfo('url').'//category/announcements/">';
-                }else {
-                  echo '<a href="'.get_permalink( $header_pages[$i] ).'">';
-                }
-                echo get_the_title($header_pages[$i]);
-                echo '</a></li>';
-              }
+			 wp_nav_menu( array( 'theme_location' => 'primary' ) ); 
             ?>
 
             <li id="search">
