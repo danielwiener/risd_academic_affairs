@@ -9,6 +9,9 @@ add_theme_support( 'post-thumbnails' );
 add_image_size( 'home-wide', 940, 395, true );
 update_option('medium_size_w', 550);
 update_option('medium_size_h', 2000);
+register_nav_menus( array(
+	'primary' => __( 'Primary Menu' ),
+) );
 
 // Custom HTML5 Comment Markup
 function mytheme_comment($comment, $args, $depth) {
@@ -48,6 +51,27 @@ if ( function_exists('register_sidebar') ) {
 	));
 }
 
+/**
+ * Register widgetized areas
+ *
+ * function tied to the init hook.
+ */
+function dw_widgets_init() {
+	// Area 1, located at the top of the sidebar.
+	register_sidebar( array(
+		'name' => 'Academic Affairs Calendar',
+		'id' => 'academic_affairs_calendar',
+		'description' => 'This is for the calendar widget on the front page.',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+
+}
+/** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
+add_action( 'widgets_init', 'dw_widgets_init' );
+
 // Custom Functions for CSS/Javascript Versioning
 $GLOBALS["TEMPLATE_URL"] = get_bloginfo('template_url')."/";
 $GLOBALS["TEMPLATE_RELATIVE_URL"] = wp_make_link_relative($GLOBALS["TEMPLATE_URL"]);
@@ -75,105 +99,3 @@ function versioned_resource($relative_url){
 }
 
 
-/*** custom post types ***/
-add_action( 'init', 'create_parseparse_post_types' );
-
-//function to create custom post types
-function create_acadaf_post_types() {
-
-    //Submission Post Type
-    $labels = array(
-        'name' => __( 'Submission' ),
-        'singular_name' => __( 'Submission' ),
-        'add_new' => __( 'Add New' ),
-        'add_new_item' => __( 'Add New Submission' ),
-        'edit' => __( 'Edit' ),
-        'edit_item' => __( 'Edit Submission' ),
-        'new_item' => __( 'New Submission' ),
-        'view' => __( 'View Submissions' ),
-        'view_item' => __( 'View Submission' ),
-        'search_items' => __( 'Search Submissions' ),
-        'not_found' => __( 'No Submissions found' ),
-        'not_found_in_trash' => __( 'No Submissions found in Trash' )
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
-        'show_ui' => true,
-        'query_var' => true,
-        'rewrite' => true,
-        'capability_type' => 'post',
-        'hierarchical' => false,
-        'show_in_nav_menus' => true,
-        'menu_position' => 5,
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail',
-            'custom-fields'
-        ),
-        'taxonomies' => array(
-            'category',
-            'post_tag'
-        ),
-        'has_archive' => 'submission',
-    );
-    register_post_type( 'submission', $args );
-
-    //Newsletter Post Type
-    $labels = array(
-        'name' => __( 'Newsletter' ),
-        'singular_name' => __( 'Newsletter' ),
-        'add_new' => __( 'Add New' ),
-        'add_new_item' => __( 'Add New Newsletter' ),
-        'edit' => __( 'Edit' ),
-        'edit_item' => __( 'Edit Newsletter' ),
-        'new_item' => __( 'New Newsletter' ),
-        'view' => __( 'View Newsletters' ),
-        'view_item' => __( 'View Newsletter' ),
-        'search_items' => __( 'Search Newsletters' ),
-        'not_found' => __( 'No Newsletters found' ),
-        'not_found_in_trash' => __( 'No Newsletters found in Trash' )
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
-        'show_ui' => true,
-        'query_var' => true,
-        'rewrite' => true,
-        'capability_type' => 'post',
-        'hierarchical' => false,
-        'show_in_nav_menus' => true,
-        'menu_position' => 5,
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail',
-            'custom-fields'
-        ),
-        'taxonomies' => array(
-            'category',
-            'post_tag'
-        ),
-        'has_archive' => 'newsletter',
-    );
-    register_post_type( 'newsletter', $args );
-}
-
-
-
-
-add_filter( 'pre_get_posts', 'my_get_posts' );
-
-function my_get_posts( $query ) {
-    if ( is_category() ) {
-        //if (false == $query->query_vars['suppress_filters'] )
-        $query -> set( 'post_type', array(
-                'post',
-                'submission'
-            ) );
-        return $query;
-    }
-}
