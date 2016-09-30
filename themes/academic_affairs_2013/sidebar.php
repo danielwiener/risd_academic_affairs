@@ -26,11 +26,14 @@ if (is_Page()){
   //17396 : special events
   //17399 : support services
   //create accordian list based on top page
-  if ($parent == 241 || $parent == 424 || $parent == 17396 || $parent == 17399 ) {
+  if ($parent == 241 || $parent == 424 || $parent == 17396 || $parent == 17399 || $parent == 20935 ) {
   
     //get top level
     //$children = wp_list_pages("title_li=&child_of=". $parent ."&depth=1&echo=0");
     $children = get_pages("sort_column=menu_order&child_of=$parent&parent=$parent");
+	// echo '<br>';
+	// print_r($children);
+	// echo '<br>';
     
     //recursively loop through
     //echo '<div class="accordion">';
