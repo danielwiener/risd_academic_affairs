@@ -10,20 +10,20 @@ function dw_custom_init()
 {  
   
 
-  /* BEGIN Other Documents Post Type*/ 
+  /* BEGIN Locations Post Type*/ 
   $labels = array(
-    'name' => _x('Other Documents', 'post type general name'),
-    'singular_name' => _x('Other Documents', 'post type singular name'),
-    'add_new' => _x('Add New', 'dw_other_documents'),
-    'add_new_item' => __('Add New Other Documents'),
-    'edit_item' => __('Edit Other Documents'),
-    'edit' => _x('Edit', 'dw_other_documents'),
-    'new_item' => __('New Other Documents'),
-    'view_item' => __('View Other Documents'),
-    'search_items' => __('Search Other Documents'),
-    'not_found' =>  __('No Other Documents found'),
-    'not_found_in_trash' => __('No Other Documents found in Trash'), 
-    'view' =>  __('View Other Documents'),
+    'name' => _x('Locations', 'post type general name'),
+    'singular_name' => _x('Location', 'post type singular name'),
+    'add_new' => _x('Add New', 'dw_locations'),
+    'add_new_item' => __('Add New Location'),
+    'edit_item' => __('Edit Locations'),
+    'edit' => _x('Edit', 'dw_locations'),
+    'new_item' => __('New Location'),
+    'view_item' => __('View Location'),
+    'search_items' => __('Search Locations'),
+    'not_found' =>  __('No Locations found'),
+    'not_found_in_trash' => __('No Locations found in Trash'), 
+    'view' =>  __('View Locations'),
     'parent_item_colon' => ''
   );
   $args = array(
@@ -33,16 +33,16 @@ function dw_custom_init()
     'show_ui' => true, 
     'query_var' => true, 
     'capability_type' => 'post',
-    'taxonomies' => array( 'post_tag', 'folios'),
+    'taxonomies' => array('materials'),
     'hierarchical' => false,
     'can_export' => true,
     'menu_position' => 5,
     'show_in_nav_menus' => true,
 	'has_archive' => true,
-    'rewrite' => array( 'slug' => 'other-documents' ),
+    'rewrite' => array( 'slug' => 'locations' ),
     'supports' => array('title','editor','thumbnail','excerpt','revisions','custom-fields')
   ); 
-  register_post_type('dw_other_documents',$args);
+  register_post_type('dw_locations',$args);
 }
 
 
