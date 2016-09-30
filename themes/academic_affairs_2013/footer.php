@@ -13,7 +13,7 @@
         <a href="mailto:jconnell@risd.edu">Contact Web Administrator</a>
       </div>
       <div id="copyright">
-        <a href=""><span class="cplogo">&#169;</span> 20013 Rhode Island School of Design</a>
+        <a href=""><span class="cplogo">&#169;</span> <?php echo date("Y") ?> Rhode Island School of Design</a>
       </div>
       <div id="facebook">
         <a href="https://www.facebook.com/RISDAcademicAffairs">
@@ -42,7 +42,7 @@
 	   
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    var _gaq=[['_setAccount','UA-44241244-1'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
