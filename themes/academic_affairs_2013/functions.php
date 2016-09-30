@@ -4,6 +4,11 @@
  * @subpackage HTML5_Boilerplate
  */
 
+// ------------ DANIEL STUFF --------------------------
+include_once('includes/dw_custom_posts.php');
+include_once('includes/dw_custom_taxonomies.php');
+
+// ------------ DANIEL STUFF --------------------------
 
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'home-wide', 940, 395, true );
