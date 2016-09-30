@@ -54,19 +54,19 @@ function dw_custom_init()
 
 $messages['dw_other_documents'] = array(
 0 => '', // Unused. Messages start at index 1.
-1 => sprintf( __('Other Document updated. <a href="%s">View Other Document</a>'), esc_url( get_permalink($post_ID) ) ),
+1 => sprintf( __('Location updated. <a href="%s">View Location</a>'), esc_url( get_permalink($post_ID) ) ),
 2 => __('Custom field updated.'),
 3 => __('Custom field deleted.'),
-4 => __('Other Document updated.'),
+4 => __('Location updated.'),
 /* translators: %s: date and time of the revision */
-5 => isset($_GET['revision']) ? sprintf( __('Other Document restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-6 => sprintf( __('Other Document published. <a href="%s">View Other Document</a>'), esc_url( get_permalink($post_ID) ) ),
-7 => __('Other Document saved.'),
-8 => sprintf( __('Other Document submitted. <a target="_blank" href="%s">Preview Other Document</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
-9 => sprintf( __('Other Document scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Other Document</a>'),
+5 => isset($_GET['revision']) ? sprintf( __('Location restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+6 => sprintf( __('Location published. <a href="%s">View Location</a>'), esc_url( get_permalink($post_ID) ) ),
+7 => __('Location saved.'),
+8 => sprintf( __('Location submitted. <a target="_blank" href="%s">Preview Location</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+9 => sprintf( __('Location scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Location</a>'),
   // translators: Publish box date format, see http://php.net/date
   date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
-10 => sprintf( __('Other Document draft updated. <a target="_blank" href="%s">Preview Other Document</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+10 => sprintf( __('Location draft updated. <a target="_blank" href="%s">Preview Location</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
 );
 
    return $messages;
