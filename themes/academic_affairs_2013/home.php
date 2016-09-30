@@ -52,12 +52,11 @@ get_header(); ?>
 		<div id="row-1">
 
 			<div id="column-1">
-				<h1>EVENTS</h1>
-				<?php sm_cal_list_cal(3);
-//				echo '<div id="sm_cal_list">';
-//				echo 'temporarily disabled for maintenance...';
-//				echo '</div>';
-				?>
+				<h1><a href="/calendar/calendar/">EVENTS</a></h1>
+				<?php if( ! dynamic_sidebar( 'academic_affairs_calendar' ) ): ?>
+				<?php endif; ?>
+				<?php // echo do_shortcode('[calendar id="20645"]');
+				 // NOTE: made another feed on the remote site so that it would show the correct number of events. And changed the formatting too. has a different id. don't forget. !!! ?> 
 			</div>
 
 
@@ -138,7 +137,6 @@ get_header(); ?>
 
 
 </div> 
-
 
 
 <?php get_footer(); ?>
