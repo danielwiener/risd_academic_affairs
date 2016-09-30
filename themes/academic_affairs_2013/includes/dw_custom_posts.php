@@ -32,7 +32,7 @@ function dw_custom_init()
     'publicly_queryable' => true,
     'show_ui' => true, 
     'query_var' => true, 
-    'capability_type' => 'post',
+    'capability_type' => 'page',
     'taxonomies' => array('materials'),
     'hierarchical' => false,
     'can_export' => true,
