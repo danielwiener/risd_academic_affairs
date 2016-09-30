@@ -13,29 +13,29 @@ if ( ! function_exists( 'build_taxonomies' ) ):
 	function build_taxonomies() {  							
 
 		 $labels = array(
-	    'name' => _x( 'Folios', 'taxonomy general name' ),
-	    'singular_name' => _x( 'Folio', 'taxonomy singular name' ),
-	    'search_items' =>  __( 'Search Folios' ),
-	    'popular_items' => __( 'Popular Folios' ),
-	    'all_items' => __( 'All Folios' ),
+	    'name' => _x( 'Materials', 'taxonomy general name' ),
+	    'singular_name' => _x( 'Material', 'taxonomy singular name' ),
+	    'search_items' =>  __( 'Search Materials' ),
+	    'popular_items' => __( 'Popular Materials' ),
+	    'all_items' => __( 'All Materials' ),
 	    'parent_item' => null,
 	    'parent_item_colon' => null,
-	    'edit_item' => __( 'Edit Folio' ), 
-	    'update_item' => __( 'Update Folio' ),
-	    'add_new_item' => __( 'Add Folio' ),
-	    'new_item_name' => __( 'New Name of a Folio' ),
+	    'edit_item' => __( 'Edit Material' ), 
+	    'update_item' => __( 'Update Material' ),
+	    'add_new_item' => __( 'Add Material' ),
+	    'new_item_name' => __( 'New Name of a Material' ),
 	  ); 
 
 		register_taxonomy(
-		'dw_folio',
-		'dw_other_documents',
+		'dw_materials',
+		'dw_locations',
 			array( 'hierarchical' => true,
 			'labels' => $labels,
 			'query_var' => true,
 			'show_ui' => true,
 			'public' => true,
 			'show_in_nav_menus' => true,
-			'rewrite' => array( 'slug' => 'folio',
+			'rewrite' => array( 'slug' => 'materials',
 								'with_front' => false,
 								'hierarchical' => 'true',
 								) ) );
