@@ -9,38 +9,24 @@ get_header(); ?>
 <div id="main" role="main">
 
   <?php if (have_posts()) : ?>
-
   <section>
-    <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
-    <?php /* If this is a category archive */ if (is_category()) { ?>
-    <h2 class="pagetitle"><?php single_cat_title(); ?></h2>
-    <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-    <h2 class="pagetitle">Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h2>
-    <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-    <h2 class="pagetitle">Archive for <?php the_time('F jS, Y'); ?></h2>
-    <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-    <h2 class="pagetitle">Archive for <?php the_time('F, Y'); ?></h2>
-    <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-    <h2 class="pagetitle">Archive for <?php the_time('Y'); ?></h2>
-    <?php /* If this is an author archive */ } elseif (is_author()) { ?>
-    <h2 class="pagetitle">Author Archive</h2>
-    <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-    <h2 class="pagetitle">Blog Archives</h2>
-    <?php } ?>
+   
+    <?php /* If this is a paged archive */ (isset($_GET['paged']) && !empty($_GET['paged']))  ?>
+    <h2 class="pagetitle">Locations</h2>
 
     <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class() ?>>
       <header>
         <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-        <time datetime="<?php the_time('Y-m-d')?>"><?php the_time('l, F jS, Y') ?></time>
+
       </header>
       <?php if (has_post_thumbnail()){
-        the_post_thumbnail("medium");
+        the_post_thumbnail('thumbnail', array( 'class' => 'alignleft' ));
       }?>
       <?php the_excerpt() ?>
       <footer>
         <div><?php the_tags('Tags: ', ', ', '<br />'); ?></div>
-        <div>Posted in <?php the_category(', ') ?></div>
+        <div><?php echo get_the_term_list( $post->ID, 'dw_materials', 'Materials: ', ', ' );  ?></div>
       </footer>
     </article>
     <?php endwhile; ?>
@@ -70,6 +56,6 @@ get_header(); ?>
 
 </div>
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('materials'); ?>
 
 <?php get_footer(); ?>
