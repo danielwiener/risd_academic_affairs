@@ -12,6 +12,7 @@ include_once('includes/dw_custom_taxonomies.php');
 
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'home-wide', 940, 395, true );
+// add_image_size( 'med-thumb', 200, 200, true );
 update_option('medium_size_w', 550);
 update_option('medium_size_h', 2000);
 register_nav_menus( array(
