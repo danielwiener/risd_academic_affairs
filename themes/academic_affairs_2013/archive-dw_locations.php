@@ -7,14 +7,22 @@
 get_header(); ?>
 
 <div id="main" role="main">
+	<?php
+	 $args = array('orderby'	=> 'menu_order',
+					'order'		=>	'ASC',
+					'post_type'	=> 'dw_locations',
+					'posts_per_page' => -1
+	);
+	$location_posts = new WP_Query($args);
+	?>
 
-  <?php if (have_posts()) : ?>
+  <?php if ($location_posts->have_posts()) : ?>
   <section>
    
     <?php /* If this is a paged archive */ (isset($_GET['paged']) && !empty($_GET['paged']))  ?>
     <h2 class="pagetitle">Locations</h2>
 
-    <?php while (have_posts()) : the_post(); ?>
+    <?php while ($location_posts->have_posts()) : $location_posts->the_post(); ?>
     <article <?php post_class() ?>>
       <header>
         <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
