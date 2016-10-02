@@ -4,7 +4,8 @@
  * @subpackage HTML5_Boilerplate
  */
 
-get_header(); ?>
+get_header(); 
+$thisterm = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
 
 <div id="main" role="main">
 
@@ -12,7 +13,7 @@ get_header(); ?>
   <section>
    
     <?php /* If this is a paged archive */ (isset($_GET['paged']) && !empty($_GET['paged']))  ?>
-    <h2 class="pagetitle">Materials</h2>
+    <h2 class="pagetitle"><a href="/materials">Materials</a> | <?php echo $thisterm->name; ?></h2>
 
     <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class() ?>>
