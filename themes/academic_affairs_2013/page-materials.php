@@ -17,28 +17,7 @@ get_header(); ?>
     <?php while (have_posts()) : the_post(); ?>
     <article <?php post_class() ?>>
       <header>
-
-
       </header>
-
-
-	<?php $material_terms = get_terms('dw_materials', array('hide_empty' => false));
-	 // print_r($material_terms);
-	foreach($material_terms as $material_term) : ?>
-	<div class="materials">
-	
-		<a href="/materials/<?php echo $material_term->slug; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo $material_term->slug; ?>.png" width="50px" height="50px" ><br /><?php echo $material_term->name; ?></a></div>	
-
-	<?php 	endforeach; ?>
-
-
-      <footer>
-        <div><?php the_tags('Tags: ', ', ', '<br />'); ?></div>
-        <div><?php echo get_the_term_list( $post->ID, 'dw_materials', 'Materials: ', ', ' );  ?></div>
-      </footer>
-    </article>
---- #2<br>
-<article <?php post_class() ?>>
 	<?php $material2_terms = get_terms('dw_materials', array('hide_empty' => false));
 	 // print_r($material_terms);
 	foreach($material2_terms as $material2_term) : ?>
@@ -53,7 +32,7 @@ get_header(); ?>
 			   'tax_query' => array(
 			      array(
 			         'taxonomy' => 'dw_materials',
-				 'field' => 'slug', // can be slug or id - a CPT-onomy term's ID is the same as its post ID
+				 'field' => 'slug', 
 				 'terms' => $material2_term->slug
 			      )
 			   )
