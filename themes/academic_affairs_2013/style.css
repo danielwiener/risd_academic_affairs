@@ -1417,3 +1417,29 @@ span.sm_cal_entry_label {
 .home #content-homepage-bottom #column-1 div.simcal-default-calendar-list .simcal-event-details {
 	font-size: 12px;	
 }
+
+/*Daniel for Makers assets*/
+
+div.materials { /*this is for a grid of icons*/
+	width: 20%;
+	/*border: 1px solid #999;*/
+	float: left;
+	height: 75px;
+	text-align: center;
+}
+
+div.materials_list { /*this is for a list of icons*/
+	width: 100%;
+	/*border: 1px solid #999;*/
+	min-height: 75px;
+	font-size: 1.2em;
+}
+
+.materials_list .locations_list{
+	font-family: "Courier New", Courier, mono;
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 1.2em;
+	/*clear: both;*/
+	color: gray;
+}
