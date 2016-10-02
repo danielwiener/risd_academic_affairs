@@ -40,7 +40,7 @@ function dw_custom_init()
     'show_in_nav_menus' => true,
 	'has_archive' => true,
     'rewrite' => array( 'slug' => 'locations' ),
-    'supports' => array('title','editor','thumbnail','excerpt','revisions','custom-fields')
+    'supports' => array('title','editor','thumbnail','excerpt','revisions','custom-fields', 'page-attributes')
   ); 
   register_post_type('dw_locations',$args);
 }
