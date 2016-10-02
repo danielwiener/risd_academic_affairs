@@ -37,14 +37,14 @@ get_header(); ?>
         <div><?php echo get_the_term_list( $post->ID, 'dw_materials', 'Materials: ', ', ' );  ?></div>
       </footer>
     </article>
----
+--- #2<br>
 <article <?php post_class() ?>>
 	<?php $material2_terms = get_terms('dw_materials', array('hide_empty' => false));
 	 // print_r($material_terms);
 	foreach($material2_terms as $material2_term) : ?>
 	<div class="materials_list">
 	
-		<a href="/materials/<?php echo $material2_term->slug; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo $material2_term->slug; ?>.png" width="65px" height="65px" class="alignleft" ><br /><?php echo $material2_term->name; ?></a>
+		<a href="/materials/<?php echo $material2_term->slug; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo $material2_term->slug; ?>.png" width="65px" height="65px" class="alignleft" ><?php echo $material2_term->name; ?></a>
 		<?php 
 			$locations = get_posts( array(
 			   'numberposts' => -1, // we want to retrieve all of the posts
@@ -60,11 +60,11 @@ get_header(); ?>
 			) );
 			if ($locations) : ?>
 
-	<br /><div class="locations_list">Locations: 
+	<br /><div class="locations_list">Locations:<br />
 		<?php	foreach ($locations as $location) : 
 				// print_r($location);?>
 			
-				<a href="<?php echo $location->post_name; ?>"><?php echo $location->post_title; ?></a>,  
+				<a href="/locations/<?php echo $location->post_name; ?>"><?php echo $location->post_title; ?></a> |   
 		<?php	endforeach; ?>
 </div>
 <?php	endif;
