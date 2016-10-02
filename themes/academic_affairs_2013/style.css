@@ -1426,6 +1426,7 @@ div.materials { /*this is for a grid of icons*/
 	float: left;
 	height: 75px;
 	text-align: center;
+	padding-bottom: 10px;
 }
 
 div.materials_list { /*this is for a list of icons*/
@@ -1433,12 +1434,13 @@ div.materials_list { /*this is for a list of icons*/
 	/*border: 1px solid #999;*/
 	min-height: 75px;
 	font-size: 1.2em;
+	padding: 20px 0 0 0;
 }
 
 .materials_list .locations_list{
 	font-family: "Courier New", Courier, mono;
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 11px;
 	line-height: 1.2em;
 	/*clear: both;*/
 	color: gray;
