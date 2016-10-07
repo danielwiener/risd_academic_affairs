@@ -1430,13 +1430,13 @@ div.materials { /*this is for a grid of icons*/
 }
 
 div.materials-for-single-locations { /*this is for a icons below a single location*/
-	width: 17%;
+	width: 20%;
 	/*border: 1px solid #999;*/
 	float: left;
 	height: 75px;
 	text-align: center;
 	padding-bottom: 10px;
-	font-size: 9px;
+	font-size: 11px;
 }
 
 
