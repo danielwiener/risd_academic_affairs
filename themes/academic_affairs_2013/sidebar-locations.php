@@ -15,7 +15,7 @@
 			'post_status' 		=> 'publish',
 			'posts_per_page'	=> -1,
 			'orderby'			=> 'menu_order',
-			"order"				=> 'DESC' 
+			"order"				=> 'ASC' 
 		);
 		$locations_query = New WP_Query($args);
 	    while ( $locations_query->have_posts() ) : $locations_query->the_post(); ?>
