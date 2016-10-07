@@ -6,8 +6,9 @@
 ?>
 
 <div id="menu">
+	<h2><a href="/locations/">Locations</a></h2>
 	<li class="categories">
-		Locations
+		
 	<ul>
 		<?php 
 			$args = array(
@@ -23,4 +24,6 @@
 		<?php endwhile; ?>
 	</ul>
 	</li>
+	<h2><a href="/locations-map/">Locations Map</a></h2>
+	<h2><a href="/materials">Search by Materials</a></h2>
 </div>
