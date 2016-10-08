@@ -4,8 +4,9 @@
  * @subpackage HTML5_Boilerplate
  */
 
-get_header(); ?>
-
+get_header(); 
+?>
+<?php if(is_user_logged_in()):?>
 <div id="main" role="main">
 	<?php
 	 $args = array('orderby'	=> 'menu_order',
@@ -20,10 +21,10 @@ get_header(); ?>
   <section>
    
     <?php /* If this is a paged archive */ (isset($_GET['paged']) && !empty($_GET['paged']))  ?>
-    <h2 class="pagetitle">Makers' Resources/Locations</h2>
+    <h2 class="pagetitle">Locations with Makers' Resources</h2>
 
     <?php while ($location_posts->have_posts()) : $location_posts->the_post(); ?>
-    <article <?php post_class() ?>>
+    <article <?php post_class('listing_page') ?>>
       <header>
         <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
@@ -35,14 +36,12 @@ get_header(); ?>
 		</div>
       <footer>
         <div><?php the_tags('Tags: ', ', ', '<br />'); ?></div>
-        <div  class="locations"><?php echo get_the_term_list( $post->ID, 'dw_materials', 'Resources: ', ', ' );  ?></div>
+        <div  class="resource_list"><?php echo get_the_term_list( $post->ID, 'dw_materials', 'Resources: ', ', ' );  ?></div>
       </footer>
     </article>
     <?php endwhile; ?>
 
     <nav>
-      <div class="old"><?php next_posts_link('&laquo; Older Entries') ?></div>
-      <div class="new"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
     </nav>
   </section>
 
@@ -67,4 +66,9 @@ get_header(); ?>
 
 <?php get_sidebar('materials'); ?>
 
+<?php else: ?>
+	Sorry, you must first <a href=”/wp-login.php”>log in</a> to view this page.
+	<?php wp_login_form(); ?>
+<?php endif; ?>
 <?php get_footer(); ?>
+
