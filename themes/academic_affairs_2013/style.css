@@ -1458,9 +1458,17 @@ div.materials_list { /*this is for a list of icons*/
 	color: gray;
 		width: 86%;
 		float: right;
-		padding-bottom: 10px;
+		padding-bottom: 5px;
 }
 
+.locations {
+	padding-top: 5px;
+}
+
+.dw_locations header {
+	margin-top: -7px;
+	margin-bottom: -7px;
+}
 
 .nav-next {
 	float: right;
