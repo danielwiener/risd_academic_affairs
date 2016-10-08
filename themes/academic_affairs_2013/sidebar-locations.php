@@ -20,7 +20,11 @@
 		);
 		$locations_query = New WP_Query($args);
 	    while ( $locations_query->have_posts() ) : $locations_query->the_post(); ?>
-	           <li class="cat-item"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+	           <li class="cat-item">
+		<?php if (get_page_template( $post->ID ) == get_template_directory() . '/page-locations_map.php'): ?>
+			<?php echo $post->menu_order ?> - 
+		<?php endif ?>
+	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
 		<?php endwhile; ?>
 	</ul>
 	</li>
