@@ -13,28 +13,26 @@ $thisterm = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxono
   <section>
    
     <?php /* If this is a paged archive */ (isset($_GET['paged']) && !empty($_GET['paged']))  ?>
-    <h2 class="pagetitle"><a href="/materials">Materials</a> | <?php echo $thisterm->name; ?></h2>
+    <h2 class="pagetitle">Locations with <?php echo $thisterm->name; ?></h2>
 
     <?php while (have_posts()) : the_post(); ?>
-    <article <?php post_class() ?>>
+    <article <?php post_class('listing_page') ?>>
       <header>
         <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
-      </header>
+      </header><div>
       <?php if (has_post_thumbnail()){
         the_post_thumbnail('thumbnail', array( 'class' => 'alignleft' ));
       }?>
-      <?php the_excerpt() ?>
+      <?php the_excerpt() ?></div>
       <footer>
         <div><?php the_tags('Tags: ', ', ', '<br />'); ?></div>
-        <div><?php echo get_the_term_list( $post->ID, 'dw_materials', 'Materials: ', ', ' );  ?></div>
+        <div class="resource_list"><?php echo get_the_term_list( $post->ID, 'dw_materials', 'Resources: ', ', ' );  ?></div>
       </footer>
     </article>
     <?php endwhile; ?>
 
     <nav>
-      <div class="old"><?php next_posts_link('&laquo; Older Entries') ?></div>
-      <div class="new"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
     </nav>
   </section>
 
