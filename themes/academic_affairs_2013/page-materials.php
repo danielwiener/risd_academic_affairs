@@ -41,9 +41,12 @@ get_header(); ?>
 
 	<br /><div class="locations_list">Locations:<br />
 		<?php	foreach ($locations as $location) : 
-				// print_r($location);?>
+				// print_r($location);
+				//http://stackoverflow.com/questions/9700012/php-foreach-if-array-last ?>
 			
-				<a href="/locations/<?php echo $location->post_name; ?>"><?php echo $location->post_title; ?></a> |   
+				<a href="/locations/<?php echo $location->post_name; ?>"><?php echo $location->post_title; ?></a> <?php if(end($locations) !== $location){
+				    echo ' |'; // not the last element
+				} ?>
 		<?php	endforeach; ?>
 </div>
 <?php	endif;
