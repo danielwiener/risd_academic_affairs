@@ -21,7 +21,7 @@ get_header();
   <section>
    
     <?php /* If this is a paged archive */ (isset($_GET['paged']) && !empty($_GET['paged']))  ?>
-    <h2 class="pagetitle">Locations with Makers' Resources</h2>
+    <h2 class="pagetitle">All Locations with Makers' Resources</h2>
 
     <?php while ($location_posts->have_posts()) : $location_posts->the_post(); ?>
     <article <?php post_class('listing_page') ?>>
