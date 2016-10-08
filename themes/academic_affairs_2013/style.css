@@ -1443,9 +1443,10 @@ div.materials-for-single-locations { /*this is for a icons below a single locati
 div.materials_list { /*this is for a list of icons*/
 	width: 100%;
 	/*border: 1px solid #999;*/
-	min-height: 75px;
+	min-height: 66px;
 	font-size: 1.2em;
-	padding: 20px 0 0 0;
+	padding: 20px 0 0px 0;
+	clear: both;
 }
 
 .materials_list .locations_list{
@@ -1455,7 +1456,11 @@ div.materials_list { /*this is for a list of icons*/
 	line-height: 1.2em;
 	/*clear: both;*/
 	color: gray;
+		width: 86%;
+		float: right;
+		padding-bottom: 10px;
 }
+
 
 .nav-next {
 	float: right;
