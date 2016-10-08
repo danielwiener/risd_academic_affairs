@@ -1461,15 +1461,19 @@ div.materials_list { /*this is for a list of icons*/
 		padding-bottom: 5px;
 }
 
-.locations {
+.resource_list {
 	padding-top: 5px;
 }
 
-.dw_locations header {
+.listing_page header {
 	margin-top: -7px;
 	margin-bottom: -7px;
 }
 
 .nav-next {
 	float: right;
+}
+
+.single_locations header {
+border-bottom: 1px dotted black;
 }
