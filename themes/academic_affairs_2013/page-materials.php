@@ -5,7 +5,7 @@
  */
 
 get_header(); ?>
-
+<?php if(is_user_logged_in()):?>
 <div id="main" role="main">
 
   <?php if (have_posts()) : ?>
@@ -87,5 +87,9 @@ get_header(); ?>
 </div>
 
 <?php get_sidebar('locations'); ?>
+<?php else: ?>
+	Sorry, you must first <a href=”/wp-login.php”>log in</a> to view this page.
+	<?php wp_login_form(); ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>
