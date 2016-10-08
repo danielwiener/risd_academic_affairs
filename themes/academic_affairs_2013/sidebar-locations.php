@@ -24,6 +24,6 @@
 		<?php endwhile; ?>
 	</ul>
 	</li>
-	<h2><a href="/locations-map/">Locations Map</a></h2>
+	<h2><a href="/locations_map/">Locations Map</a></h2>
 	<h2><a href="/materials">Search by Materials</a></h2>
 </div>
