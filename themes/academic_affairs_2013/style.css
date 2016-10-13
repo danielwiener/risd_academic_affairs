@@ -1479,8 +1479,10 @@ border-bottom: 1px dotted black;
 }
 
 .single_locations h4 {
-	font-size: 1.3em;
+	font-size: 1.3em !important;
 }
+
+
 
 .single_locations li {
 	list-style: circle;
