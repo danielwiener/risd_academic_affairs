@@ -1477,3 +1477,14 @@ div.materials_list { /*this is for a list of icons*/
 .single_locations header {
 border-bottom: 1px dotted black;
 }
+
+.single_locations h4 {
+	font-size: 1.3em;
+}
+
+.single_locations li {
+	list-style: circle;
+	font-size: 1.08em;
+	line-height: 1.3em;
+	color: #555;
+	}
