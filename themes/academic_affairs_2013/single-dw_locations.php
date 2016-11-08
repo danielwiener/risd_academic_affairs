@@ -12,7 +12,7 @@ get_header(); ?>
 
   <article <?php post_class('single_locations') ?> id="post-<?php the_ID(); ?>">
     <header>
-      <h2>Markers' Resources at <?php the_title(); ?></a>
+      <h2>Makers' Resources at <?php the_title(); ?></a>
 </h2>
 <?php $material3_terms = get_the_terms( $post->ID, 'dw_materials' );  
 	foreach ($material3_terms as $material3_term) : ?>
