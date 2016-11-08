@@ -6,7 +6,6 @@
 
 get_header(); 
 ?>
-<?php if(is_user_logged_in()):?>
 <div id="main" role="main">
 	<?php
 	 $args = array('orderby'	=> 'menu_order',
@@ -65,10 +64,5 @@ get_header();
 </div>
 
 <?php get_sidebar('materials'); ?>
-
-<?php else: ?>
-	Sorry, you must first <a href=”/wp-login.php”>log in</a> to view this page.
-	<?php wp_login_form(); ?>
-<?php endif; ?>
 <?php get_footer(); ?>
 

@@ -6,7 +6,6 @@
 
 get_header(); 
 
-if(is_user_logged_in()):
 $thisterm = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
 
 <div id="main" role="main">
@@ -58,9 +57,5 @@ $thisterm = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxono
 </div>
 
 <?php get_sidebar('materials'); ?>
-<?php else: ?>
-	Sorry, you must first <a href=”/wp-login.php”>log in</a> to view this page.
-	<?php wp_login_form(); ?>
-<?php endif; ?>
 
 <?php get_footer(); ?>
